@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: false;
+}
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-gilroy: "Gilroy", sans-serif;
+  --font-quarto: "Quarto", sans;
+
+  --color-black: #121212;
+  --color-dark-grey: #2f2f2f;
+  --color-mid-grey: #ababab;
+  --color-grey: #6f6f6f;
+  --color-electric-blue: #0062ff;
+  --color-light-grey: #f3f4f6;
+  --color-yellow: #eb9500;
+  --color-pink: #ffc5af;
+  --color-turquoise: #c1dcd9;
+  --color-beige: #f6f1e5;
+}
+
+#hero-bg {
+  @apply bg-[url('../img/hero-bg.png')] bg-cover bg-center bg-no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes bounceDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.bounce {
+  animation: bounceDown 1.2s ease-in-out infinite;
+}
+
+.bounce-stop:hover {
+  animation: none;
+}
+
+.progress-ring-next,
+.progress-ring-prev {
+  transition: stroke-dashoffset 0.4s ease, opacity 0.4s ease;
+}
+.collapse-arrow .collapse-title::after {
+  display: none !important;
+}
+#progressRing {
+  transition: stroke-dashoffset 0.3s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Overlay Menu */
+.overlay-menu {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.overlay-menu.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Close Button Positioning */
+.overlay-menu .close-menu {
+  position: absolute;
+  top: 26px; /* Matches header's py-6.5 (1.625rem * 16px = 26px) */
+  right: 32px; /* Matches header's px-8 (2rem * 16px = 32px) */
+}
+
+/* Menu List Animation */
+.menu-list li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.overlay-menu.active .menu-list li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Animation for Menu Items */
+.overlay-menu.active .menu-list li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.overlay-menu.active .menu-list li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.overlay-menu.active .menu-list li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.overlay-menu.active .menu-list li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.overlay-menu.active .menu-list li:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+body.menu-open {
+  overflow: hidden;
+}

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridge Partner</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+  </head>
+
+  <body class="bg-beige font-inter">
+    <!-- header start -->
+    <header class="relative" id="header">
+      <div class="w-full lg:max-w-[1470px] mx-auto px-8">
+        <div class="flex justify-between items-center py-6.5">
+          <a href="./index.html">
+            <img src="./img/logo.svg" alt="logo" class="w-[100px] lg:w-44" />
+          </a>
+          <div class="flex justify-center items-center gap-12">
+            <a
+              href="#"
+              class="contact-us py-3 px-9 rounded-full bg-transparent text-black hover:bg-black hover:text-white border-2 border-black font-medium transition duration-300 ease-in-out hidden lg:inline-block"
+            >
+              Contact Us
+            </a>
+            <span
+              class="divider w-10 h-[1px] bg-black hidden lg:inline-block"
+            ></span>
+            <!-- Hamburger Button -->
+            <button class="hamburger text-2xl lg:text-3xl cursor-pointer">
+              <i class="ri-menu-2-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Overlay Menu -->
+    <nav
+      class="overlay-menu fixed inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center z-50 hidden"
+    >
+      <div class="w-full lg:max-w-[1470px] mx-auto px-8">
+        <button class="close-menu text-white text-3xl">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <ul
+        class="menu-list flex flex-col items-center gap-8 text-white text-xl lg:text-3xl"
+      >
+        <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
+        <li><a href="#" class="hover:text-gray-300 transition">Country</a></li>
+        <li><a href="#" class="hover:text-gray-300 transition">About</a></li>
+        <li>
+          <a href="#" class="hover:text-gray-300 transition">Blog</a>
+        </li>
+        <li><a href="#" class="hover:text-gray-300 transition">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- header end -->
+    <!-- main start -->
+    <main class="w-full">
+      <!-- hero -->
+      <section class="relative pt-6 pb-24 px-4">
+        <div class="w-full lg:max-w-[1470px] mx-auto">
+          <h1
+            class="text-5xl lg:text-[100px] font-medium text-black lg:mt-20 mb-10"
+          >
+            As a boutique investment migration firm, you can rely on our team
+            for a service that’s tailored to you and your family.
+          </h1>
+        </div>
+        <a
+          href="#about"
+          class="group absolute bottom-3.5 left-1/2 -translate-x-1/2 min-w-9 min-h-14.5 border-2 border-grey rounded-full flex items-center justify-center text-grey hover:bg-grey hover:text-white transition-all duration-300 ease-in-out cursor-pointer"
+          id="scroll-down"
+          aria-label="Scroll down"
+        >
+          <i
+            class="ri-arrow-down-s-line text-xl bounce bounce-stop group-hover:text-white"
+          ></i>
+        </a>
+      </section>
+      <!-- contact start -->
+      <section class="py-12 lg:py-24">
+        <div
+          class="w-full lg:max-w-[1470px] flex flex-col lg:flex-row justify-between gap-10 px-4 mx-auto"
+        >
+          <div class="w-full lg:w-5/12">
+            <div>
+              <a
+                href="#"
+                class="text-[22px] text-black font-medium border-b-[1px] border-black pb-3 lg:pb-4 inline-block"
+              >
+                Request a call today
+              </a>
+            </div>
+            <h2 class="text-black text-3xl lg:text-6xl pt-6">
+              At Bridge Partners Global, we navigate the complexities of
+              investment migration with precision and discretion.
+            </h2>
+          </div>
+          <div class="w-full lg:w-6/12">
+            <form class="space-y-6 pb-5">
+              <!-- Grid for 2 columns on md+ -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    class="w-full bg-transparent border-0 border-b-[2px] border-black focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    class="w-full bg-transparent border-0 border-b-[2px] border-black focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="w-full bg-transparent border-0 border-b-[2px] border-black focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    class="w-full bg-transparent border-0 border-b-[2px] border-black focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal"
+                  />
+                </div>
+              </div>
+
+              <!-- Message + Send Button -->
+              <div class="flex items-end gap-4">
+                <div class="flex-1">
+                  <input
+                    type="text"
+                    placeholder="Write your messages in here"
+                    class="w-full bg-transparent border-0 border-b-[2px] border-black focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="w-12 h-12 border border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition text-2xl cursor-pointer"
+                >
+                  <i class="ri-arrow-right-up-line"></i>
+                </button>
+              </div>
+            </form>
+            <!-- location 1 -->
+            <div class="space-y-[22px] py-12 lg:py-20">
+              <!-- info -->
+              <div class="flex items-center gap-4">
+                <div>
+                  <img src="./img/london.png" alt="" class="max-w-[118px]" />
+                </div>
+                <div class="pl-5">
+                  <h3 class="text-2xl font-medium pb-2">London Office:</h3>
+                  <div class="flex flex-col lg:items-cente lg:flex-row">
+                    <div>
+                      <p class="text-black font-gilroy font-normal">
+                        67 Grosvenor Street,London W1K 3JNUnited Kingdom
+                      </p>
+                    </div>
+                    <div
+                      class="hidden lg:block w-[1px] h-[50px] bg-grey mx-7"
+                    ></div>
+                    <div
+                      class="block lg:hidden h-[1px] w-[63px] bg-grey my-2"
+                    ></div>
+                    <ul>
+                      <li>
+                        <a
+                          href="tel:+442033973897"
+                          class="font-gilroy font-normal"
+                          >+44203 397 3897</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="mailto:info@bridgepartnersglobal.com"
+                          class="font-gilroy font-normal text-electric-blue"
+                          >info@bridgepartnersglobal.com</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- map -->
+              <div>
+                <img src="./img/map-01.png" alt="map" />
+              </div>
+            </div>
+            <!-- location 2 -->
+            <div class="space-y-[22px]">
+              <!-- info -->
+              <div class="flex items-center gap-4">
+                <div>
+                  <img src="./img/dubai.png" alt="" class="max-w-[118px]" />
+                </div>
+                <div class="pl-5">
+                  <h3 class="text-2xl font-medium pb-2">Dubai Office:</h3>
+                  <div
+                    class="flex flex-col lg:items-center lg:flex-row space-x-7"
+                  >
+                    <div>
+                      <p class="text-black font-gilroy font-normal">
+                        Meydan Grandstand 6th Floor, Meydan Road, Nad Al Sheba,
+                        Dubai, UAE
+                      </p>
+                    </div>
+                    <div
+                      class="hidden lg:block w-[1px] h-[50px] bg-grey mx-4"
+                    ></div>
+                    <div class="block lg:hidden h-[1px] w-[63px] bg-grey"></div>
+                    <ul>
+                      <li>
+                        <a
+                          href="mailto:info@bridgepartnersglobal.com"
+                          class="font-gilroy font-normal text-electric-blue"
+                          >info@bridgepartnersglobal.com</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- map -->
+              <div>
+                <img src="./img/map-01.png" alt="map" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- main end -->
+    <!-- footer start -->
+    <footer class="bg-dark-grey pt-10 pb-10 lg:pt-20">
+      <div
+        class="w-full lg:max-w-[1470px] mx-auto px-4 lg:px-8 space-y-10 lg:space-y-20"
+      >
+        <div
+          class="flex flex-col lg:flex-row justify-between space-x-28 space-y-12"
+        >
+          <!-- logo -->
+          <a href="./index.html">
+            <img src="./img/footer-logo.svg" alt="footer logo" />
+          </a>
+          <!-- menus -->
+          <div>
+            <ul class="flex flex-col lg:flex-row gap-8 text-white text-sm">
+              <li class="flex flex-col space-y-4">
+                <a href="mailto:info@bridgepartnersuk.com"
+                  >info@bridgepartnersuk.com</a
+                >
+                <a href="tel:+4402033973897">+44 (0) 203 397 3897</a>
+              </li>
+              <li>
+                <a href="#">67 Grosvenor Street,London W1K 3JNUnited Kingdom</a>
+              </li>
+              <li>
+                <a href="#"
+                  >67 Grosvenor Street,Dubai W1K 3JNUnited Arab Emirates</a
+                >
+              </li>
+            </ul>
+            <ul
+              class="flex flex-row flex-wrap justify-between space-x-7 mt-8 lg:mt-30"
+            >
+              <li>
+                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                  >Residency</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                  >Citezenship</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                  >Articles/Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- social -->
+          <div class="flex flex-col gap-8">
+            <ul class="flex items-center space-x-3">
+              <li><p class="block text-white">Follow&nbspUs:</p></li>
+              <li>
+                <a
+                  href="#"
+                  class="text-yellow w-11 h-11 rounded-full bg-white flex justify-center items-center text-xl"
+                  ><i class="ri-facebook-fill"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-yellow w-11 h-11 rounded-full bg-white flex justify-center items-center text-xl"
+                  ><i class="ri-instagram-line"></i
+                ></a>
+              </li>
+            </ul>
+            <div>
+              <h3 class="text-white lg:text-lg font-gilroy pb-2">
+                Subscribe for Updates
+              </h3>
+              <p class="text-mid-grey font-gilroy">
+                Subscribe to our newsletter to stay up to date with our latest
+                news
+              </p>
+            </div>
+            <!-- newsletter -->
+            <div class="relative flex items-center w-full max-w-md">
+              <!-- Email Input -->
+              <input
+                type="email"
+                placeholder="Your Email Address here"
+                class="input input-bordered w-full bg-transparent text-grey border-grey outline outline-grey rounded-full pl-4 pr-12 h-12 focus:outline-none focus:ring-2 focus:ring-teal-500 font-gilroy"
+              />
+              <!-- Submit Button -->
+              <button
+                class="absolute right-1 btn btn-circle bg-teal-200 hover:bg-teal-300 text-gray-800 text-xl h-11 w-11 flex items-center justify-center"
+              >
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-between gap-4">
+          <ul class="flex flex-row gap-16">
+            <li>
+              <a href="#" class="text-xs text-white font-gilroy">Disclaimer</a>
+            </li>
+            <li>
+              <a href="#" class="text-xs text-white font-gilroy"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+          <p class="text-xs text-white font-gilroy">
+            © Copyright 2025 Bridge Partners, Inc. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- script -->
+    <script>
+      function toggleAccordionBg() {
+        const inputs = document.querySelectorAll(
+          'input[name="my-accordion-group"]'
+        );
+        inputs.forEach((input) => {
+          const accordion = input.closest(".collapse");
+          if (input.checked) {
+            accordion.classList.remove("bg-transparent");
+            accordion.classList.add("bg-white");
+            accordion.classList.add("shadow-lg");
+          } else {
+            accordion.classList.remove("shadow-lg");
+            accordion.classList.remove("bg-white");
+            accordion.classList.add("bg-transparent");
+          }
+        });
+      }
+      toggleAccordionBg();
+    </script>
+    <script>
+      const swiper = new Swiper(".newSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true, // Optional: loop the slides
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination-bullets",
+          type: "bullets",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return `<span class="${className} w-3 h-3 rounded-full bg-gray-500 transition-all duration-300"></span>`;
+          },
+        },
+        // Custom fraction pagination
+        on: {
+          init: function () {
+            this.el.querySelector(".swiper-pagination-current").textContent =
+              String(this.realIndex + 1).padStart(2, "0");
+            this.el.querySelector(".swiper-pagination-total").textContent =
+              String(this.slides.length).padStart(2, "0");
+          },
+          slideChange: function () {
+            this.el.querySelector(".swiper-pagination-current").textContent =
+              String(this.realIndex + 1).padStart(2, "0");
+          },
+        },
+      });
+
+      // Add orange color to active bullet
+      swiper.on("slideChange", function () {
+        document
+          .querySelectorAll(".swiper-pagination-bullet")
+          .forEach((bullet, index) => {
+            bullet.classList.remove("bg-orange-500");
+            if (index === swiper.realIndex) {
+              bullet.classList.add("bg-orange-500");
+            }
+          });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
