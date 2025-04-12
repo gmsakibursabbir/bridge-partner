@@ -109,3 +109,7 @@
 body.menu-open {
   overflow: hidden;
 }
+
+.location-map iframe {
+  border-radius: 92px;
+}
