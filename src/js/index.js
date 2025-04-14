@@ -326,7 +326,7 @@ document.querySelectorAll(".approach").forEach((section) => {
 //twoapprochSwipper
 const twoApprochswiper = new Swiper(".twoApprochSwiper", {
   spaceBetween: 16,
-  slidesPerView: 1.2,
+  slidesPerView: 1,
   pagination: false,
   navigation: false,
   loop: true,
