@@ -17,6 +17,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./css/style.min.css" />
@@ -234,14 +238,18 @@
         >
           <div class="w-full lg:max-w-[1300px] mx-auto mt-20 px-4 lg:px-0">
             <h1
-              class="text-white text-7xl lg:text-[118px] leading-tight lg:leading-[100px] text-blanding font-light max-w-[1100px]"
+              class="text-white text-7xl lg:text-[118px] leading-tight lg:leading-[100px] text-blanding font-light max-w-[1100px] wow animate__fadeInUp"
+              data-wow-duration="1s"
+              data-wow-delay="0.3s"
+              data-wow-offset="0"
+              data-wow-iteration="1"
             >
               Secure your future, without borders
             </h1>
           </div>
 
           <a
-            href="#about"
+            href="#about-approch"
             class="group absolute bottom-3.5 left-1/2 -translate-x-1/2 min-w-9 min-h-14.5 border-2 border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-beige transition-all duration-300 ease-in-out cursor-pointer"
             id="scroll-down"
             aria-label="Scroll down"
@@ -253,7 +261,7 @@
         </div>
       </section>
       <!-- approch start -->
-      <section class="px-4 lg:px-14 relative approach lg:block hidden">
+      <section class="px-4 lg:px-14 relative approach lg:block hidden" id="about-approch">
         <div class="swiper approach-swiper">
           <div class="swiper-wrapper">
             <!-- slider 1 -->
@@ -664,7 +672,11 @@
           <div>
             <a
               href="#"
-              class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block"
+              class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block wow animate__fadeInUp"
+              data-wow-duration="1s"
+              data-wow-delay="0.3s"
+              data-wow-offset="0"
+              data-wow-iteration="1"
             >
               What Sets Us Apart?
             </a>
@@ -673,7 +685,13 @@
         <div class="w-full px-4 lg:pr-44 flex flex-col items-end">
           <div class="w-full lg:max-w-[900px]">
             <!-- Swiper -->
-            <div class="swiper localSwiper">
+            <div
+              class="swiper localSwiper wow animate__fadeInleft"
+              data-wow-duration="1s"
+              data-wow-delay="0.3s"
+              data-wow-offset="0"
+              data-wow-iteration="1"
+            >
               <div class="swiper-wrapper">
                 <!-- slide 1 -->
                 <div class="swiper-slide">
@@ -746,7 +764,7 @@
                     style="width: 0%"
                   ></div>
                 </div>
-                <span id="totalSteps" class="text-yellow font-bold">05</span>
+                <span id="totalSteps" class="text-yellow font-bold">02</span>
               </div>
 
               <div class="flex gap-4 ml-6 mt-10 lg:mt-0 self-end">
@@ -780,7 +798,11 @@
             </div>
           </div>
           <h3
-            class="text-black text-[32px] lg:text-6xl font-light max-w-[748px] leading-tight lg:leading-16 pt-28"
+            class="text-black text-[32px] lg:text-6xl font-light max-w-[748px] leading-tight lg:leading-16 pt-28 wow animate__fadeIn"
+            data-wow-duration="1s"
+            data-wow-delay="0.3s"
+            data-wow-offset="0"
+            data-wow-iteration="1"
           >
             Whether you are looking for a second passport, European residency,
             or tax-efficient global solutions,
@@ -797,13 +819,23 @@
             <div>
               <a
                 href="#"
-                class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block"
+                class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block wow animate__fadeInUp"
+                data-wow-duration="1s"
+                data-wow-delay="0.3s"
+                data-wow-offset="0"
+                data-wow-iteration="1"
               >
                 Meet Our Team Members:
               </a>
             </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 wow animate__fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.3s"
+            data-wow-offset="0"
+            data-wow-iteration="1"
+          >
             <!-- one -->
             <div>
               <div>
@@ -874,7 +906,11 @@
             </div>
           </div>
           <div
-            class="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-20 pt-10 lg:pt-20"
+            class="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-20 pt-10 lg:pt-20 wow animate__fadeInUp"
+            data-wow-duration="1s"
+            data-wow-delay="0.3s"
+            data-wow-offset="0"
+            data-wow-iteration="1"
           >
             <!-- 1 -->
             <div>
@@ -1500,6 +1536,7 @@
           });
       });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

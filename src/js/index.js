@@ -18,36 +18,49 @@ document.addEventListener("DOMContentLoaded", () => {
       slideChange: function () {
         updateProgressRing(this);
       },
+      slideChangeTransitionEnd: function () {
+        updateProgressRing(this);
+      },
     },
   });
 
-  const totalSlides = mySwiper.slides.length; // Dynamically get total slides
-  const dashArray = 283;
+  const totalSlides = mySwiper.slides.length;
+  const radius = 48;
+  const dashArray = 2 * Math.PI * radius; // ≈ 301
 
   function updateProgressRing(swiper) {
-    const index = swiper.realIndex; // Current slide index
-    const slidesPerView = swiper.params.slidesPerView; // Visible slides
-    const scrollableSlides = totalSlides - slidesPerView; // Number of scrollable steps
-    const progress = scrollableSlides > 0 ? index / scrollableSlides : 1; // Progress as a fraction
-    const offset = dashArray * (1 - progress); // Calculate dash offset
-
     const nextRing = document.querySelector(".progress-ring-next");
     const prevRing = document.querySelector(".progress-ring-prev");
+    if (!nextRing || !prevRing) {
+      console.error("Progress rings not found!");
+      return;
+    }
 
-    // Update ring visibility and progress
-    if (swiper.isEnd) {
-      nextRing.style.opacity = "0";
-      prevRing.style.opacity = "1";
-      prevRing.style.strokeDashoffset = offset;
-    } else if (swiper.isBeginning) {
-      nextRing.style.opacity = "1";
-      prevRing.style.opacity = "0";
-      nextRing.style.strokeDashoffset = offset;
+    const index = swiper.realIndex;
+    const slidesPerView = swiper.params.slidesPerView;
+    const totalScrollable = Math.max(totalSlides - slidesPerView, 0);
+    const progress = totalScrollable > 0 ? index / totalScrollable : 0;
+
+    // Next ring: empty at start (offset=301), full at end (offset=0)
+    const nextOffset = dashArray * (1 - progress);
+    // Prev ring: full at start (offset=0), empty at end (offset=301)
+    const prevOffset = dashArray * progress;
+
+    // Update next ring
+    if (swiper.isEnd || totalScrollable === 0) {
+      nextRing.style.opacity = "1"; // Full ring at end
+      nextRing.style.strokeDashoffset = 0;
     } else {
       nextRing.style.opacity = "1";
+      nextRing.style.strokeDashoffset = nextOffset;
+    }
+
+    // Update prev ring
+    if (swiper.isBeginning) {
+      prevRing.style.opacity = "0"; // No ring at start
+    } else {
       prevRing.style.opacity = "1";
-      nextRing.style.strokeDashoffset = offset;
-      prevRing.style.strokeDashoffset = offset;
+      prevRing.style.strokeDashoffset = prevOffset;
     }
   }
 });
@@ -105,33 +118,32 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".local-prev",
     },
     on: {
-      init: updateProgress,
-      slideChange: updateProgress,
+      init: (swiper) => updateProgress(swiper),
+      slideChange: (swiper) => updateProgress(swiper),
     },
   });
 
-  function updateProgress() {
+  function updateProgress(swiper) {
     const currentIndex = swiper.realIndex + 1;
-    const totalSlides = swiper.slides.length;
+    const totalSlides = swiper.slides.length || 1; // Prevent division by zero
 
-    // Update text numbers
-    document.getElementById("currentStep").textContent = String(
-      currentIndex
-    ).padStart(2, "0");
-    document.getElementById("totalSteps").textContent = String(
-      totalSlides
-    ).padStart(2, "0");
+    const currentStep = document.getElementById("currentStep");
+    const totalSteps = document.getElementById("totalSteps");
+    const progressBar = document.getElementById("progressBar");
+    const progressRing = document.getElementById("progressRing");
 
-    // Progress bar percent
-    const percent = (currentIndex / totalSlides) * 100;
-
-    // Fill bar
-    const bar = document.getElementById("progressBar");
-    if (bar) bar.style.width = `${percent}%`;
-
-    // Ring stroke offset
-    const ring = document.getElementById("progressRing");
-    if (ring) ring.style.strokeDashoffset = 100 - percent;
+    if (currentStep)
+      currentStep.textContent = String(currentIndex).padStart(2, "0");
+    if (totalSteps)
+      totalSteps.textContent = String(totalSlides).padStart(2, "0");
+    if (progressBar)
+      progressBar.style.width = `${(currentIndex / totalSlides) * 100}%`;
+    if (progressRing) {
+      const radius = 16;
+      const dashArray = 2 * Math.PI * radius;
+      progressRing.style.strokeDashoffset =
+        dashArray * (1 - currentIndex / totalSlides);
+    }
   }
 });
 
@@ -455,3 +467,12 @@ function updateApplyProgress(swiper) {
   ).style.width = `${progressApply}%`;
 }
 
+// wow
+var wow = new WOW({
+  boxClass: "wow", // Class to trigger animations
+  animateClass: "animate__animated", // Animation class prefix
+  offset: 0, // Default trigger offset
+  mobile: true, // Enable animations on mobile
+  live: true, // Detect dynamically added elements
+});
+wow.init();

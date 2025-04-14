@@ -13,7 +13,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./css/style.min.css" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
   </head>
@@ -226,19 +229,63 @@
       <!-- hero start -->
       <section class="relative -top-30 lg:px-8" id="hero">
         <div
-          class="text-center py-[150px] min-h-[400px] lg:min-h-[888px] lg:rounded-b-4xl flex flex-col items-center justify-center relative px-4 lg:px-0 "
+          class="text-center py-[150px] min-h-[400px] lg:min-h-[888px] lg:rounded-b-4xl flex flex-col items-center justify-center relative px-4 lg:px-0"
           id="hero-bg"
         >
           <h1
-            class="text-white text-6xl lg:text-[140px] leading-0 lg:leading-[100px] uppercase text-blanding lg:block hidden animate-text"
+            class="text-white text-6xl lg:text-[140px] leading-0 lg:leading-[100px] uppercase text-blanding lg:block hidden"
           >
-            <div class="block font-inter font-normal">Bridge</div>
-            <div class="text-start">
-              <span class="font-quarto italic -mt-[100px]">the</span>
-              <span>gap</span>
+            <div
+              class="block font-inter font-normal animate-text wow animate__fadeInUp"
+              data-wow-duration="1s"
+              data-wow-delay="0.3s"
+              data-wow-offset="30"
+              data-wow-iteration="1"
+            >
+              Bridge
             </div>
-            <div class="block">go global</div>
-            <div class="block text-end -mt-3 -mr-3 lg:-mr-16">with us</div>
+            <div
+              class="text-start wow animate__fadeIn"
+              data-wow-duration="1s"
+              data-wow-delay="0.3s"
+              data-wow-offset="30"
+              data-wow-iteration="1"
+            >
+              <span
+                class="font-quarto italic -mt-[100px] animate-text wow animate__fadeInDown"
+                data-wow-duration="1s"
+                data-wow-delay="0.3s"
+                data-wow-offset="30"
+                data-wow-iteration="1"
+                >the</span
+              >
+              <span
+                class="animate-text wow animate__fadeInUp"
+                data-wow-duration="1s"
+                data-wow-delay="0.3s"
+                data-wow-offset="30"
+                data-wow-iteration="1"
+                >gap</span
+              >
+            </div>
+            <div
+              class="block animate-text wow animate__fadeInDown"
+              data-wow-duration="1s"
+              data-wow-delay="0.3s"
+              data-wow-offset="30"
+              data-wow-iteration="1"
+            >
+              go global
+            </div>
+            <div
+              class="block text-end -mt-3 -mr-3 lg:-mr-16 animate-text wow animate__fadeInUp"
+              data-wow-duration="1s"
+              data-wow-delay="0.3s"
+              data-wow-offset="30"
+              data-wow-iteration="1"
+            >
+              with us
+            </div>
           </h1>
           <h1
             class="text-white text-6xl lg:text-[140px] leading-[48px] lg:leading-[100px] uppercase text-blanding lg:hidden flex flex-col mt-5"
@@ -267,7 +314,14 @@
         </div>
       </section>
       <!-- about start -->
-      <section id="about" class="pb-16 lg:py-36">
+      <section
+        id="about"
+        class="pb-16 lg:py-36 wow animate__fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay="0.2s"
+        data-wow-offset="0"
+        data-wow-iteration="1"
+      >
         <div class="w-full lg:max-w-[1420px] px-4 lg:px-8">
           <h2
             class="text-5xl lg:text-7xl font-inter font-medium leadiong-tight lg:leading-[80px] text-black mb-10"
@@ -288,7 +342,14 @@
         </div>
       </section>
       <!-- citizenship start -->
-      <section id="citizenship" class="bg-white pb-[200px] lg:pb-[500px]">
+      <section
+        id="citizenship"
+        class="bg-white pb-[200px] lg:pb-[500px] wow animate__fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay="0.2s"
+        data-wow-offset="0"
+        data-wow-iteration="1"
+      >
         <div class="w-full bg-beige h-[300px] -mb-80"></div>
         <div class="w-full pl-4 lg:pl-[14%] z-10">
           <div class="flex items-center justify-between mb-10">
@@ -306,18 +367,18 @@
               >
                 <span class="text-xl">←</span>
                 <svg
-                  class="absolute top-0 left-0 w-16 h-16 rotate-[-90deg] pointer-events-none"
+                  class="absolute inset-0 w-full h-full rotate-[-90deg] pointer-events-none"
                   viewBox="0 0 100 100"
                 >
                   <circle
                     class="progress-ring-prev stroke-black opacity-0"
                     cx="50"
                     cy="50"
-                    r="45"
+                    r="48"
                     fill="transparent"
-                    stroke-width="6"
-                    stroke-dasharray="283"
-                    stroke-dashoffset="283"
+                    stroke-width="3"
+                    stroke-dasharray="301"
+                    stroke-dashoffset="0"
                   />
                 </svg>
               </button>
@@ -328,18 +389,18 @@
               >
                 <span class="text-xl">→</span>
                 <svg
-                  class="absolute top-0 left-0 w-16 h-16 rotate-[-90deg] pointer-events-none"
+                  class="absolute inset-0 w-full h-full rotate-[-90deg] pointer-events-none"
                   viewBox="0 0 100 100"
                 >
                   <circle
-                    class="progress-ring-next stroke-black opacity-1"
+                    class="progress-ring-next stroke-black opacity-100"
                     cx="50"
                     cy="50"
-                    r="45"
+                    r="48"
                     fill="transparent"
-                    stroke-width="6"
-                    stroke-dasharray="283"
-                    stroke-dashoffset="283"
+                    stroke-width="3"
+                    stroke-dasharray="301"
+                    stroke-dashoffset="301"
                   />
                 </svg>
               </button>
@@ -550,7 +611,14 @@
         </div>
       </section>
       <!-- citizenship 2 start -->
-      <section id="citizenship-tow" class="">
+      <section
+        id="citizenship-tow"
+        class="wow animate__fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay="0.2s"
+        data-wow-offset="0"
+        data-wow-iteration="1"
+      >
         <div class="w-full pl-4 lg:pl-[14%] -mt-40 lg:-mt-80">
           <div class="flex items-center justify-between mb-10">
             <h2
@@ -902,11 +970,17 @@
         </div>
       </section>
       <!-- local start -->
-      <section class="py-32 bg-dark-grey" id="local">
+      <section class="py-32 bg-dark-grey overflow-x-hidden" id="local">
         <div class="w-full px-4 lg:pr-44 flex flex-col items-end">
           <div class="w-full lg:max-w-[900px]">
             <!-- Swiper -->
-            <div class="swiper localSwiper">
+            <div
+              class="swiper localSwiper wow animate__fadeInRight"
+              data-wow-duration="0.9s"
+              data-wow-delay="0.2s"
+              data-wow-offset="0"
+              data-wow-iteration="1"
+            >
               <div class="swiper-wrapper">
                 <!-- slide 1 -->
                 <div class="swiper-slide">
@@ -966,7 +1040,11 @@
             </div>
             <!-- Progress & Navigation -->
             <div
-              class="flex flex-col lg:flex-row items-center justify-between lg:mt-6 text-white lg:max-w-[748px] ms-auto lg:gap-12 mt-14"
+              class="flex flex-col lg:flex-row items-center justify-between lg:mt-6 text-white lg:max-w-[748px] ms-auto lg:gap-12 mt-14 wow animate__fadeInLeft"
+              data-wow-duration="1s"
+              data-wow-delay="0.2s"
+              data-wow-offset="0"
+              data-wow-iteration="1"
             >
               <div class="flex items-center gap-4 w-full max-w-xl">
                 <span id="currentStep" class="text-yellow font-bold">01</span>
@@ -979,17 +1057,22 @@
                     style="width: 0%"
                   ></div>
                 </div>
-                <span id="totalSteps" class="text-yellow font-bold">05</span>
+                <span id="totalSteps" class="text-yellow font-bold">02</span>
+                <span class="sr-only" id="progressStatus"
+                  >Slide <span id="currentStep">01</span> of
+                  <span id="totalSteps">02</span></span
+                >
               </div>
-
               <div class="flex gap-4 ml-6 mt-10 lg:mt-0 self-end">
                 <button
                   class="local-prev w-16 h-16 border border-mid-grey rounded-full flex items-center justify-center hover:bg-white/10 text-xl"
+                  aria-label="Previous slide"
                 >
                   <i class="ri-arrow-left-long-line"></i>
                 </button>
                 <button
                   class="local-next w-16 h-16 border border-mid-grey rounded-full flex items-center justify-center relative text-xl"
+                  aria-label="Next slide"
                 >
                   <i class="ri-arrow-right-long-line"></i>
                   <svg
@@ -1003,8 +1086,8 @@
                       stroke="orange"
                       stroke-width="2"
                       fill="none"
-                      stroke-dasharray="100"
-                      stroke-dashoffset="100"
+                      stroke-dasharray="100.53"
+                      stroke-dashoffset="100.53"
                       id="progressRing"
                     />
                   </svg>
@@ -1013,7 +1096,11 @@
             </div>
           </div>
           <h3
-            class="text-[#F6F1E5]/60 text-[32px] lg:text-6xl font-light max-w-[748px] leading-tight lg:leading-16 pt-28"
+            class="text-[#F6F1E5]/60 text-[32px] lg:text-6xl font-light max-w-[748px] leading-tight lg:leading-16 pt-28 wow animate__fadeIn"
+            data-wow-duration="1s"
+            data-wow-delay="0.2s"
+            data-wow-offset="0"
+            data-wow-iteration="1"
           >
             Whether you are looking for a second passport, European residency,
             or tax-efficient global solutions,
@@ -1028,7 +1115,13 @@
         <div class="swiper approach-swiper">
           <div class="swiper-wrapper">
             <!-- slider 1 -->
-            <div class="swiper-slide">
+            <div
+              class="swiper-slide wow animate__slideInRight"
+              data-wow-duration="0.3s"
+              data-wow-delay="0.3s"
+              data-wow-offset="0"
+              data-wow-iteration="1"
+            >
               <div class="">
                 <div class="absolute top-10 left-0 flex flex-col space-y-3">
                   <div>
@@ -1522,7 +1615,10 @@
                 for="accordion3-input"
                 class="flex items-center justify-between w-full cursor-pointer"
               >
-                <span>Which countries offer the best Citizenship by Investment programs?</span>
+                <span
+                  >Which countries offer the best Citizenship by Investment
+                  programs?</span
+                >
                 <!-- Icon container -->
                 <div
                   class="min-w-14 min-h-14 lg:w-16 lg:h-16 p-3 rounded-full border-2 border-gray-400 flex items-center justify-center"
@@ -1586,7 +1682,9 @@
                 for="accordion5-input"
                 class="flex items-center justify-between w-full cursor-pointer"
               >
-                <span>How much does it cost to get citizenship by investment?</span>
+                <span
+                  >How much does it cost to get citizenship by investment?</span
+                >
                 <!-- Icon container -->
                 <div
                   class="min-w-14 min-h-14 lg:w-16 lg:h-16 p-3 rounded-full border-2 border-gray-400 flex items-center justify-center"
@@ -1618,7 +1716,10 @@
                 for="accordion6-input"
                 class="flex items-center justify-between w-full cursor-pointer"
               >
-                <span>How long does it take to obtain citizenship or residency by investment?</span>
+                <span
+                  >How long does it take to obtain citizenship or residency by
+                  investment?</span
+                >
                 <!-- Icon container -->
                 <div
                   class="min-w-14 min-h-14 lg:w-16 lg:h-16 p-3 rounded-full border-2 border-gray-400 flex items-center justify-center"
@@ -1926,7 +2027,7 @@
         navigation: false,
       });
     </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
