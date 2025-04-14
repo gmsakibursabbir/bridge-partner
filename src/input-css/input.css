@@ -26,6 +26,18 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+#hero-country {
+  @apply bg-[url('../img/scenic-view-bay-against-sky.png')] bg-cover bg-center bg-no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#hero-about {
+  @apply bg-[url('../img/about-bg.png')] bg-cover bg-center bg-no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 @keyframes bounceDown {
   0%,
@@ -112,4 +124,45 @@ body.menu-open {
 
 .location-map iframe {
   border-radius: 92px;
+}
+
+.approach-swiper {
+  height: 100vh;
+  width: 100%;
+}
+
+.approach-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Custom pagination progress bar styling */
+.approach-progress-bar-container {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  border-radius: 100px;
+}
+.approach-progress-bar {
+  width: 3px;
+  height: 500px;
+  background: rgba(15, 40, 60, 0.3);
+  position: relative;
+  border-radius: 100px;
+}
+.approach-progress-bar-fill {
+  width: 6px !important;
+  background: #eb9500;
+  position: absolute;
+  top: 0;
+  transition: height 0.3s ease;
+  border-radius: 100px;
+  left: 50%;
+  transform: translateX(-50%);
 }

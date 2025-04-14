@@ -178,3 +178,94 @@ smoothScrollLinks.forEach((link) => {
     }
   });
 });
+
+//approch
+function initializeApproachSection(approachSection) {
+  // Skip if section is already initialized
+  if (approachSection.dataset.initialized) {
+    console.warn("Approach section already initialized. Skipping...");
+    return;
+  }
+
+  // Mark section as initialized
+  approachSection.dataset.initialized = "true";
+
+  // Find Swiper element within this section
+  const swiperElement = approachSection.querySelector(
+    ".approach-swiper, .newApproach-swiper"
+  );
+  if (!swiperElement) {
+    console.error("Swiper element not found in approach section.");
+    return;
+  }
+
+  // Check if Swiper is already initialized
+  if (swiperElement.swiper) {
+    console.warn("Swiper already initialized on this element. Skipping...");
+    return;
+  }
+
+  // Initialize Swiper
+  const approachSwiper = new Swiper(swiperElement, {
+    direction: "vertical",
+    slidesPerView: 1,
+    spaceBetween: 0,
+    mousewheel: false, // Disable Swiper's mousewheel control
+  });
+
+  // GSAP ScrollTrigger setup
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Get DOM elements within this section
+  const totalSlides = approachSwiper.slides.length;
+  const currentSlideNumber = approachSection.querySelector(
+    ".current-slide-number"
+  );
+  const totalSlideNumber = approachSection.querySelector(".total-slide-number");
+  const progressBarFill = approachSection.querySelector(
+    ".approach-progress-bar-fill"
+  );
+
+  // Validate required elements
+  if (!currentSlideNumber || !totalSlideNumber || !progressBarFill) {
+    console.error(
+      "Required elements (current-slide-number, total-slide-number, or progress-bar-fill) not found."
+    );
+    return;
+  }
+
+  // Set the total slide number (e.g., "05")
+  totalSlideNumber.textContent = totalSlides.toString().padStart(2, "0");
+
+  // Pin the section and control the Swiper slides with scroll
+  ScrollTrigger.create({
+    trigger: approachSection,
+    start: "top top",
+    end: () => `+=${window.innerHeight * (totalSlides - 1)}`,
+    pin: true,
+    pinSpacing: true,
+    scrub: 1,
+    onUpdate: (self) => {
+      // Calculate the current slide based on scroll progress
+      const progress = self.progress;
+      const slideIndex = Math.round(progress * (totalSlides - 1));
+      approachSwiper.slideTo(slideIndex, 0); // Instantly change slide
+
+      // Update the current slide number (e.g., "01" to "05")
+      currentSlideNumber.textContent = (slideIndex + 1)
+        .toString()
+        .padStart(2, "0");
+
+      // Update the progress bar height
+      progressBarFill.style.height = `${progress * 100}%`;
+    },
+  });
+
+  // Initialize progress bar height
+  progressBarFill.style.height = `${(1 / totalSlides) * 100}%`;
+}
+
+// Initialize all .approach sections
+document.querySelectorAll(".approach").forEach((section) => {
+  initializeApproachSection(section);
+});
