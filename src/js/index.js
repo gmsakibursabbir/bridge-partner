@@ -1,9 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper(".mySwiper", {
+  const mySwiper = new Swiper(".mySwiper", {
     spaceBetween: 16,
     navigation: {
       nextEl: ".swiper-next",
       prevEl: ".swiper-prev",
+    },
+    breakpoints: {
+      0: { slidesPerView: 1.2 },
+      640: { slidesPerView: 2.2 },
+      1024: { slidesPerView: 3.2 },
+      1280: { slidesPerView: 4.2 },
+    },
+    on: {
+      init: function () {
+        updateProgressRing(this);
+      },
+      slideChange: function () {
+        updateProgressRing(this);
+      },
+    },
+  });
+
+  const totalSlides = mySwiper.slides.length; // Dynamically get total slides
+  const dashArray = 283;
+
+  function updateProgressRing(swiper) {
+    const index = swiper.realIndex; // Current slide index
+    const slidesPerView = swiper.params.slidesPerView; // Visible slides
+    const scrollableSlides = totalSlides - slidesPerView; // Number of scrollable steps
+    const progress = scrollableSlides > 0 ? index / scrollableSlides : 1; // Progress as a fraction
+    const offset = dashArray * (1 - progress); // Calculate dash offset
+
+    const nextRing = document.querySelector(".progress-ring-next");
+    const prevRing = document.querySelector(".progress-ring-prev");
+
+    // Update ring visibility and progress
+    if (swiper.isEnd) {
+      nextRing.style.opacity = "0";
+      prevRing.style.opacity = "1";
+      prevRing.style.strokeDashoffset = offset;
+    } else if (swiper.isBeginning) {
+      nextRing.style.opacity = "1";
+      prevRing.style.opacity = "0";
+      nextRing.style.strokeDashoffset = offset;
+    } else {
+      nextRing.style.opacity = "1";
+      prevRing.style.opacity = "1";
+      nextRing.style.strokeDashoffset = offset;
+      prevRing.style.strokeDashoffset = offset;
+    }
+  }
+});
+// 2
+document.addEventListener("DOMContentLoaded", () => {
+  const mySwiperTwo = new Swiper(".mySwiperTwo", {
+    spaceBetween: 16,
+    navigation: {
+      nextEl: ".swiper-nextTwo",
+      prevEl: ".swiper-prevTwo",
     },
     breakpoints: {
       0: { slidesPerView: 1.2 },
@@ -27,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const progress = Math.min(index / maxIndex, 1);
     const offset = dashArray * (1 - progress);
 
-    const nextRing = document.querySelector(".progress-ring-next");
-    const prevRing = document.querySelector(".progress-ring-prev");
+    const nextRing = document.querySelector(".progress-ring-nextTwo");
+    const prevRing = document.querySelector(".progress-ring-prevTwo");
 
     if (swiper.isEnd) {
       nextRing.style.opacity = "0";
@@ -269,3 +323,135 @@ function initializeApproachSection(approachSection) {
 document.querySelectorAll(".approach").forEach((section) => {
   initializeApproachSection(section);
 });
+//twoapprochSwipper
+const twoApprochswiper = new Swiper(".twoApprochSwiper", {
+  spaceBetween: 16,
+  slidesPerView: 1.2,
+  pagination: false,
+  navigation: false,
+  loop: true,
+  autoSlide: {
+    delay: 1000,
+    disableOnInteraction: false,
+  },
+});
+//twoapprochSwipper
+const globalsSwiper = new Swiper(".globalsSwiper", {
+  spaceBetween: 16,
+  slidesPerView: 1,
+  pagination: false,
+  navigation: false,
+  loop: true,
+  autoSlide: {
+    delay: 1000,
+    disableOnInteraction: false,
+  },
+});
+//twoapprochSwipper
+const investApprochSwiper = new Swiper(".investApprochSwiper", {
+  spaceBetween: 16,
+  slidesPerView: 1,
+  pagination: false,
+  navigation: false,
+  loop: true,
+  autoSlide: {
+    delay: 1000,
+    disableOnInteraction: false,
+  },
+});
+
+// Select all radio inputs
+const radioInputs = document.querySelectorAll(
+  'input[name="my-accordion-group"]'
+);
+
+radioInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    // Get all accordion containers and icons
+    const allAccordions = document.querySelectorAll(".collapse");
+    const allIcons = document.querySelectorAll(".icon");
+
+    // Reset all accordions to faq-default and icons to down arrow
+    allAccordions.forEach((accordion) => {
+      accordion.classList.remove("faq-active");
+      accordion.classList.add("faq-default");
+    });
+    allIcons.forEach((icon) => {
+      icon.classList.remove("ri-arrow-up-long-line");
+      icon.classList.add("ri-arrow-down-long-line");
+    });
+
+    // Set the parent of the checked input to faq-active and change icon to up arrow
+    const parentAccordion = input.closest(".collapse");
+    const icon = parentAccordion.querySelector(".icon");
+    if (input.checked) {
+      parentAccordion.classList.remove("faq-default");
+      parentAccordion.classList.add("faq-active");
+      icon.classList.remove("ri-arrow-down-long-line");
+      icon.classList.add("ri-arrow-up-long-line");
+    }
+  });
+});
+
+// Nevis Slider
+const nevisSwiper = new Swiper(".nevisSwiper", {
+  navigation: false,
+  centeredSlides: true,
+  loop: false,
+  on: {
+    init: function () {
+      updateNevisProgress(this);
+    },
+    slideChange: function () {
+      updateNevisProgress(this);
+    },
+  },
+});
+
+function updateNevisProgress(swiper) {
+  const totalSlides = swiper.slides.length;
+  const currentIndex = swiper.realIndex + 1;
+  const progress = (currentIndex / totalSlides) * 100;
+
+  document.querySelector(".current-slide-nevis").textContent = currentIndex
+    .toString()
+    .padStart(2, "0");
+  document.querySelector(".total-slides-nevis").textContent = totalSlides
+    .toString()
+    .padStart(2, "0");
+  document.querySelector(".progress-nevis-fill").style.width = `${progress}%`;
+}
+
+// Apply Slider
+const applySwiper = new Swiper(".applySwiper", {
+  slidesPerView: 1.2,
+  navigation: false,
+  centeredSlides: true,
+  loop: false,
+  on: {
+    init: function () {
+      updateApplyProgress(this);
+    },
+    slideChange: function () {
+      updateApplyProgress(this);
+    },
+  },
+});
+
+function updateApplyProgress(swiper) {
+  const totalSlidesApply = swiper.slides.length;
+  const currentIndexApply = swiper.realIndex + 1;
+  const progressApply = (currentIndexApply / totalSlidesApply) * 100;
+
+  // Updated class names to match the HTML
+  document.querySelector(".current-slide-apply").textContent = currentIndexApply
+    .toString()
+    .padStart(2, "0");
+  document.querySelector(".total-slides-apply").textContent = totalSlidesApply
+    .toString()
+    .padStart(2, "0");
+  document.querySelector(
+    ".progress-apply-fill"
+  ).style.width = `${progressApply}%`;
+}
+

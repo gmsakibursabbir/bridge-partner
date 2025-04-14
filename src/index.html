@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bridge Partner</title>
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.min.css"
@@ -19,6 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="./css/style.min.css" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
   </head>
@@ -38,55 +33,204 @@
           </a>
           <div class="flex justify-center items-center gap-12">
             <a
-              href="#"
-              class="contact-us py-3 px-9 rounded-full bg-transparent text-white hover:bg-black hover:text-white border-2 border-white font-medium transition duration-300 ease-in-out hidden lg:inline-block"
+              href="./contact.html"
+              class="contact-us py-3 px-9 rounded-full bg-transparent text-white hover:bg-white hover:text-black border-2 border-white font-medium transition duration-300 ease-in-out hidden lg:inline-block"
             >
               Contact Us
             </a>
             <span
-              class="divider w-10 h-[1px] bg-white hidden lg:inline-block my-auto"
+              class="w-10 h-[1px] bg-white hidden lg:inline-block my-auto"
             ></span>
 
             <!-- Hamburger Button -->
-            <button class="hamburger text-2xl lg:text-3xl cursor-pointer">
+            <label
+              for="my-drawer"
+              class="hamburger text-2xl lg:text-3xl cursor-pointer inline-block"
+            >
               <i class="ri-menu-2-line text-white"></i>
-            </button>
+            </label>
           </div>
         </div>
       </div>
     </header>
     <!-- Overlay Menu -->
-    <nav
-      class="overlay-menu fixed inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center z-50 hidden"
-    >
-      <div class="w-full lg:max-w-[1470px] mx-auto px-8">
-        <button class="close-menu text-white text-3xl">
-          <i class="ri-close-line"></i>
-        </button>
+    <div class="drawer drawer-end z-50">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+      <div class="drawer-side">
+        <label for="my-drawer" class="drawer-overlay"></label>
+
+        <div
+          class="menu p-8 lg:p-20 w-[90vw] lg:max-w-[561px] min-h-full bg-dark-grey text-white flex flex-col justify-between relative"
+        >
+          <!-- Close Button -->
+          <label
+            for="my-drawer"
+            class="border-none cursor-pointer bg-dark-grey absolute right-20 top-10 text-white text-2xl"
+          >
+            <i class="ri-close-large-line"></i>
+          </label>
+
+          <!-- Centered Menu -->
+          <div class="flex-grow flex items-center justify-center">
+            <!-- <ul class="space-y-8 text-center">
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Residency</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Citizenship</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Articles/Blog</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Contact Us</a
+                >
+              </li>
+            </ul> -->
+            <ul class="space-y-4 lg:space-y-8 text-left -ml-10">
+              <li>
+                <a
+                  href="./index.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-100 opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300 is-active"
+                  ></span>
+                  <span class="transition-all duration-300 translate-x-7">
+                    Home
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./about.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    About Us
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Residency
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./blog.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Citizenship
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./blog.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Articles/Blog
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./contact.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Contact Us
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Footer at bottom left -->
+          <div class="pt-10">
+            <ul class="space-y-2 text-left">
+              <li>
+                <a
+                  class="text-lg cursor-pointer font-gilroy font-light underline underline-offset-5 inline-block hover:text-yellow"
+                  >Disclaimer</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-lg cursor-pointer font-gilroy font-light underline underline-offset-5 inline-block hover:text-yellow"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <ul
-        class="menu-list flex flex-col items-center gap-8 text-white text-xl lg:text-3xl"
-      >
-        <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
-        <li><a href="#" class="hover:text-gray-300 transition">Country</a></li>
-        <li><a href="#" class="hover:text-gray-300 transition">About</a></li>
-        <li>
-          <a href="#" class="hover:text-gray-300 transition">Blog</a>
-        </li>
-        <li><a href="#" class="hover:text-gray-300 transition">Contact</a></li>
-      </ul>
-    </nav>
+    </div>
     <!-- header end -->
     <!-- main start -->
     <main class="w-full">
       <!-- hero start -->
-      <section class="px-4 lg:px-8 relative -top-30" id="hero">
+      <section class="relative -top-30 lg:px-8" id="hero">
         <div
-          class="text-center py-[150px] min-h-[888px] rounded-b-4xl flex flex-col items-center justify-center relative"
+          class="text-center py-[150px] min-h-[400px] lg:min-h-[888px] lg:rounded-b-4xl flex flex-col items-center justify-center relative px-4 lg:px-0 "
           id="hero-bg"
         >
           <h1
-            class="text-white text-[140px] leading-[100px] uppercase text-blanding"
+            class="text-white text-6xl lg:text-[140px] leading-0 lg:leading-[100px] uppercase text-blanding lg:block hidden animate-text"
           >
             <div class="block font-inter font-normal">Bridge</div>
             <div class="text-start">
@@ -94,7 +238,20 @@
               <span>gap</span>
             </div>
             <div class="block">go global</div>
-            <div class="block text-end -mt-3 -mr-16">with us</div>
+            <div class="block text-end -mt-3 -mr-3 lg:-mr-16">with us</div>
+          </h1>
+          <h1
+            class="text-white text-6xl lg:text-[140px] leading-[48px] lg:leading-[100px] uppercase text-blanding lg:hidden flex flex-col mt-5"
+          >
+            <div class="block font-inter font-normal">Bridge</div>
+            <div class="text-start flex">
+              <span class="font-quarto italic -mt-2">the</span>
+              <span>gap</span>
+            </div>
+            <div class="block text-start">go</div>
+            <div class="block">global</div>
+            <div class="block text-end -mt-3 -mr-3 lg:-mr-16">with</div>
+            <div class="block text-end -mt-3 -mr-3 lg:-mr-16">us</div>
           </h1>
 
           <a
@@ -110,10 +267,10 @@
         </div>
       </section>
       <!-- about start -->
-      <section id="about" class="py-36">
+      <section id="about" class="pb-16 lg:py-36">
         <div class="w-full lg:max-w-[1420px] px-4 lg:px-8">
           <h2
-            class="text-7xl font-inter font-medium leading-[80px] text-black mb-10"
+            class="text-5xl lg:text-7xl font-inter font-medium leadiong-tight lg:leading-[80px] text-black mb-10"
           >
             Bridge Partner is <span class="text-mid-grey">your gateway</span> to
             visa-free travel, tax optimization, and business expansion-<span
@@ -131,18 +288,23 @@
         </div>
       </section>
       <!-- citizenship start -->
-      <section id="citizenship" class="py-36 overflow-x-hidden">
-        <div class="w-full pl-[14%]">
+      <section id="citizenship" class="bg-white pb-[200px] lg:pb-[500px]">
+        <div class="w-full bg-beige h-[300px] -mb-80"></div>
+        <div class="w-full pl-4 lg:pl-[14%] z-10">
           <div class="flex items-center justify-between mb-10">
-            <h2 class="max-w-[764px] text-6xl font-normal text-black">
+            <h2
+              class="max-w-[764px] text-[32px] lg:text-6xl font-normal text-black"
+            >
               Popular Citizenship by Investment Countries
             </h2>
-            <div class="flex items-center gap-4 mr-1">
+            <div
+              class="hidden lg:flex items-center gap-4 mr-1 mt-5 justify-center"
+            >
               <!-- Prev Button -->
               <button
                 class="relative w-16 h-16 border border-black rounded-full flex items-center justify-center swiper-prev"
               >
-                <span class="text-xl">&#8592;</span>
+                <span class="text-xl">←</span>
                 <svg
                   class="absolute top-0 left-0 w-16 h-16 rotate-[-90deg] pointer-events-none"
                   viewBox="0 0 100 100"
@@ -164,13 +326,13 @@
               <button
                 class="relative w-16 h-16 border border-black rounded-full flex items-center justify-center swiper-next"
               >
-                <span class="text-xl">&#8594;</span>
+                <span class="text-xl">→</span>
                 <svg
                   class="absolute top-0 left-0 w-16 h-16 rotate-[-90deg] pointer-events-none"
                   viewBox="0 0 100 100"
                 >
                   <circle
-                    class="progress-ring-next stroke-black opacity-0"
+                    class="progress-ring-next stroke-black opacity-1"
                     cx="50"
                     cy="50"
                     r="45"
@@ -202,10 +364,10 @@
                   </a>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="text-2xl font-inter font-medium">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
                     St. Kitts and Nevis
                   </h3>
-                  <p class="text-xl font-inter font-normal text-dark-grey">
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
                     Invest in the world’s most exclusive Caribbean citizenship
                     program and enjoy visa-free travel to over 150 countries,
                     tax advantages, and a lifestyle of sun, sand, and
@@ -235,10 +397,236 @@
                   </a>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="text-2xl font-inter font-medium">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
                     St. Kitts and Nevis
                   </h3>
-                  <p class="text-xl font-inter font-normal text-dark-grey">
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
+                    Invest in the world’s most exclusive Caribbean citizenship
+                    program and enjoy visa-free travel to over 150 countries,
+                    tax advantages, and a lifestyle of sun, sand, and
+                    sophistication.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+              <!-- slide 2 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-02.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    Grenada
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
+                    The only Caribbean citizenship-by-investment program
+                    offering visa-free access to China and eligibility for the
+                    U.S. E-2 Investor Visa. Unlock global business and travel
+                    freedom with Grenada’s powerful passport.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+              <!-- slide 3 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-03.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    Malta
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
+                    Become a global citizen with Malta’s prestigious citizenship
+                    program, offering EU residency, visa-free access to over 180
+                    countries, and the opportunity to live, work, and travel
+                    freely across Europe.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+              <!-- slide 4 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-04.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    Antigua & Barbuda
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-light text-dark-grey">
+                    Gain citizenship in this stunning twin-island nation with
+                    visa-free travel to 150+ countries, tax advantages, and a
+                    luxurious Caribbean lifestyle—perfect for global investors
+                    and their families.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+              <!-- slide 5 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-01.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    St. Kitts and Nevis
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
+                    Invest in the world’s most exclusive Caribbean citizenship
+                    program and enjoy visa-free travel to over 150 countries,
+                    tax advantages, and a lifestyle of sun, sand, and
+                    sophistication.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- citizenship 2 start -->
+      <section id="citizenship-tow" class="">
+        <div class="w-full pl-4 lg:pl-[14%] -mt-40 lg:-mt-80">
+          <div class="flex items-center justify-between mb-10">
+            <h2
+              class="max-w-[764px] text-[32px] lg:text-6xl font-normal text-black"
+            >
+              Popular Residency by Investment Countries
+            </h2>
+            <div class="hidden lg:flex items-center gap-4 mr-1">
+              <!-- Prev Button -->
+              <button
+                class="relative w-16 h-16 border border-black rounded-full flex items-center justify-center swiper-prevTwo"
+              >
+                <span class="text-xl">&#8592;</span>
+                <svg
+                  class="absolute top-0 left-0 w-16 h-16 rotate-[-90deg] pointer-events-none"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="progress-ring-prev stroke-black opacity-0"
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="transparent"
+                    stroke-width="6"
+                    stroke-dasharray="283"
+                    stroke-dashoffset="283"
+                  />
+                </svg>
+              </button>
+
+              <!-- Next Button -->
+              <button
+                class="relative w-16 h-16 border border-black rounded-full flex items-center justify-center swiper-nextTwo"
+              >
+                <span class="text-xl">&#8594;</span>
+                <svg
+                  class="absolute top-0 left-0 w-16 h-16 rotate-[-90deg] pointer-events-none"
+                  viewBox="0 0 100 100"
+                >
+                  <circle
+                    class="progress-ring-next stroke-black opacity-0"
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="transparent"
+                    stroke-width="6"
+                    stroke-dasharray="283"
+                    stroke-dashoffset="283"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper mySwiperTwo">
+            <div class="swiper-wrapper">
+              <!-- slide 1 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-01.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    St. Kitts and Nevis
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
                     Invest in the world’s most exclusive Caribbean citizenship
                     program and enjoy visa-free travel to over 150 countries,
                     tax advantages, and a lifestyle of sun, sand, and
@@ -268,10 +656,10 @@
                   </a>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="text-2xl font-inter font-medium">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
                     St. Kitts and Nevis
                   </h3>
-                  <p class="text-xl font-inter font-normal text-dark-grey">
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
                     Invest in the world’s most exclusive Caribbean citizenship
                     program and enjoy visa-free travel to over 150 countries,
                     tax advantages, and a lifestyle of sun, sand, and
@@ -284,7 +672,106 @@
                   >DISCOVER</a
                 >
               </div>
-              <!-- slide 1 -->
+              <!-- slide 2 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-02.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    Grenada
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
+                    The only Caribbean citizenship-by-investment program
+                    offering visa-free access to China and eligibility for the
+                    U.S. E-2 Investor Visa. Unlock global business and travel
+                    freedom with Grenada’s powerful passport.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+              <!-- slide 3 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-03.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    Malta
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
+                    Become a global citizen with Malta’s prestigious citizenship
+                    program, offering EU residency, visa-free access to over 180
+                    countries, and the opportunity to live, work, and travel
+                    freely across Europe.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+              <!-- slide 4 -->
+              <div class="swiper-slide space-y-8">
+                <!-- img -->
+                <div class="relative">
+                  <img
+                    src="./img/citizenship-04.webp"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                  <a
+                    href="#"
+                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
+                  >
+                    <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                </div>
+                <div class="space-y-4">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
+                    Antigua & Barbuda
+                  </h3>
+                  <p class="lg:text-xl font-grotesk font-light text-dark-grey">
+                    Gain citizenship in this stunning twin-island nation with
+                    visa-free travel to 150+ countries, tax advantages, and a
+                    luxurious Caribbean lifestyle—perfect for global investors
+                    and their families.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
+                  >DISCOVER</a
+                >
+              </div>
+              <!-- slide 5 -->
               <div class="swiper-slide space-y-8">
                 <!-- img -->
                 <div class="relative">
@@ -301,76 +788,10 @@
                   </a>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="text-2xl font-inter font-medium">
+                  <h3 class="text-[22px] lg:text-2xl font-inter font-medium">
                     St. Kitts and Nevis
                   </h3>
-                  <p class="text-xl font-inter font-normal text-dark-grey">
-                    Invest in the world’s most exclusive Caribbean citizenship
-                    program and enjoy visa-free travel to over 150 countries,
-                    tax advantages, and a lifestyle of sun, sand, and
-                    sophistication.
-                  </p>
-                </div>
-                <a
-                  href="#"
-                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
-                  >DISCOVER</a
-                >
-              </div>
-              <!-- slide 1 -->
-              <div class="swiper-slide space-y-8">
-                <!-- img -->
-                <div class="relative">
-                  <img
-                    src="./img/citizenship-01.webp"
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
-                  <a
-                    href="#"
-                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
-                  >
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-                <div class="space-y-4">
-                  <h3 class="text-2xl font-inter font-medium">
-                    St. Kitts and Nevis
-                  </h3>
-                  <p class="text-xl font-inter font-normal text-dark-grey">
-                    Invest in the world’s most exclusive Caribbean citizenship
-                    program and enjoy visa-free travel to over 150 countries,
-                    tax advantages, and a lifestyle of sun, sand, and
-                    sophistication.
-                  </p>
-                </div>
-                <a
-                  href="#"
-                  class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
-                  >DISCOVER</a
-                >
-              </div>
-              <!-- slide 1 -->
-              <div class="swiper-slide space-y-8">
-                <!-- img -->
-                <div class="relative">
-                  <img
-                    src="./img/citizenship-01.webp"
-                    alt=""
-                    class="w-full h-full object-cover"
-                  />
-                  <a
-                    href="#"
-                    class="w-8 h-8 bg-white rounded-full absolute top-3.5 right-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out cursor-pointer"
-                  >
-                    <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                </div>
-                <div class="space-y-4">
-                  <h3 class="text-2xl font-inter font-medium">
-                    St. Kitts and Nevis
-                  </h3>
-                  <p class="text-xl font-inter font-normal text-dark-grey">
+                  <p class="lg:text-xl font-grotesk font-normal text-dark-grey">
                     Invest in the world’s most exclusive Caribbean citizenship
                     program and enjoy visa-free travel to over 150 countries,
                     tax advantages, and a lifestyle of sun, sand, and
@@ -388,11 +809,11 @@
         </div>
       </section>
       <!-- partnership start -->
-      <section id="partnership" class="py-36 relative">
+      <section id="partnership" class="py-10 lg:py-36 relative">
         <div
-          class="scrolpartnership w-full min-h-screen px-4 lg:px-14 flex justify-center items-center relative"
+          class="scrolpartnership w-full min-h-[80vh] lg:min-h-screen px-4 lg:px-14 flex justify-center items-center relative"
         >
-          <div class="absolute top-20 left-14">
+          <div class="absolute top-20 left-[16px] lg:left-14">
             <a
               href="#"
               class="text-2xl text-black font-medium border-b-[1px] border-black pb-4"
@@ -401,19 +822,19 @@
             </a>
           </div>
           <div
-            class="title absolute text-8xl font-medium opacity-0 text-black z-10"
+            class="title absolute text-7xl lg:text-8xl text-center font-medium opacity-0 text-black z-10"
             id="title1"
           >
             Your Journey.
           </div>
           <div
-            class="title absolute text-8xl font-medium opacity-0 text-black z-10"
+            class="title absolute text-7xl lg:text-8xl text-center font-medium text-center opacity-0 text-black z-10"
             id="title2"
           >
             Our Expertise.
           </div>
           <div
-            class="title absolute text-8xl font-medium opacity-0 text-black z-10"
+            class="title absolute text-7xl lg:text-8xl text-center font-medium opacity-0 text-black z-10"
             id="title3"
           >
             Success Starts Here.
@@ -424,7 +845,7 @@
             <img
               src="../src/img/bg-overlay-bellow.png"
               alt="Overlay"
-              class="w-full max-w-3xl opacity-10"
+              class="w-full lg:max-w-3xl opacity-10"
             />
           </div>
         </div>
@@ -432,10 +853,12 @@
       </section>
       <!-- textscroll start -->
       <section>
-        <div class="textscroller py-10 px-4 lg:px-14 opacity-0">
-          <div class="flex justify-between items-end">
+        <div class="textscroller lg:py-10 px-4 lg:px-14 opacity-0">
+          <div
+            class="flex flex-col lg:flex-row justify-between item-center lg:items-end"
+          >
             <h3
-              class="text-6xl font-inter font-medium text-black max-w-[995px]"
+              class="text-[32px] lg:text-6xl font-inter font-medium text-black max-w-[995px]"
             >
               At ,
               <span class="text-gray-500">Bridge Partners Global</span> we are
@@ -443,7 +866,9 @@
               <span class="text-gray-500">trusted partners</span>
               on the journey to global mobility.
             </h3>
-            <div class="max-w-[494px]">
+            <div
+              class="max-w-[300px] lg:max-w-[494px] mx-auto lg:mx-0 mt-10 lg:mt-0"
+            >
               <p class="text-lg text-black font-gilroy font-normal">
                 With a proven track record in both immigration and investment
                 migration, we offer a seamless, personalized service tailored to
@@ -466,7 +891,7 @@
               </div>
             </div>
           </div>
-          <div class="pt-60">
+          <div class="mt-20 lg:mt-60 pb-4">
             <a
               href="#"
               class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block"
@@ -478,29 +903,29 @@
       </section>
       <!-- local start -->
       <section class="py-32 bg-dark-grey" id="local">
-        <div class="w-full pr-44 flex flex-col items-end">
-          <div class="max-w-[900px]">
+        <div class="w-full px-4 lg:pr-44 flex flex-col items-end">
+          <div class="w-full lg:max-w-[900px]">
             <!-- Swiper -->
             <div class="swiper localSwiper">
               <div class="swiper-wrapper">
                 <!-- slide 1 -->
                 <div class="swiper-slide">
-                  <div class="flex gap-12">
-                    <div class="">
+                  <div class="flex flex-col lg:flex-row lg:gap-12">
+                    <div class="pb-10">
                       <img
                         src="./img/local-icon.png"
                         alt=""
-                        class="max-w-[100px]"
+                        class="max-w-[80px] lg:max-w-[100px]"
                       />
                     </div>
-                    <div class="space-y-4 max-w-[748px]">
+                    <div class="lg:space-y-4 lg:max-w-[748px]">
                       <h2
-                        class="text-6xl font-inter font-light text-white max-w-[500px]"
+                        class="text-3xl lg:text-6xl font-inter font-light text-white lg:max-w-[500px]"
                       >
                         Local Expertise, Global Reach
                       </h2>
                       <p
-                        class="text-xl font-gilroy font-normal text-white pt-10"
+                        class="lg:text-xl font-grotesk font-normal text-white pt-10"
                       >
                         We work exclusively with trusted local experts in every
                         country we offer citizenship or residency programs,
@@ -512,22 +937,22 @@
                 </div>
                 <!-- slide 1 -->
                 <div class="swiper-slide">
-                  <div class="flex gap-12">
-                    <div class="">
+                  <div class="flex flex-col lg:flex-row lg;gap-12">
+                    <div class="pb-10">
                       <img
                         src="./img/local-icon.png"
                         alt=""
-                        class="max-w-[100px]"
+                        class="max-w-[80px] lg:max-w-[100px]]"
                       />
                     </div>
-                    <div class="space-y-4 max-w-[748px]">
+                    <div class="space-y-4 lg:max-w-[748px]">
                       <h2
-                        class="text-6xl font-inter font-light text-white max-w-[500px]"
+                        class="text-3xl lg:text-6xl font-inter font-light text-white lg:max-w-[500px]"
                       >
                         Local Expertise, Global Reach
                       </h2>
                       <p
-                        class="text-xl font-gilroy font-normal text-white pt-10"
+                        class="lg:text-xl font-grotesk font-normal text-white pt-10"
                       >
                         We work exclusively with trusted local experts in every
                         country we offer citizenship or residency programs,
@@ -541,7 +966,7 @@
             </div>
             <!-- Progress & Navigation -->
             <div
-              class="flex items-center justify-between mt-6 text-white max-w-[748px] ms-auto gap-12"
+              class="flex flex-col lg:flex-row items-center justify-between lg:mt-6 text-white lg:max-w-[748px] ms-auto lg:gap-12 mt-14"
             >
               <div class="flex items-center gap-4 w-full max-w-xl">
                 <span id="currentStep" class="text-yellow font-bold">01</span>
@@ -557,7 +982,7 @@
                 <span id="totalSteps" class="text-yellow font-bold">05</span>
               </div>
 
-              <div class="flex gap-4 ml-6">
+              <div class="flex gap-4 ml-6 mt-10 lg:mt-0 self-end">
                 <button
                   class="local-prev w-16 h-16 border border-mid-grey rounded-full flex items-center justify-center hover:bg-white/10 text-xl"
                 >
@@ -588,7 +1013,7 @@
             </div>
           </div>
           <h3
-            class="text-[#F6F1E5]/60 text-6xl font-light max-w-[748px] leading-16 pt-28"
+            class="text-[#F6F1E5]/60 text-[32px] lg:text-6xl font-light max-w-[748px] leading-tight lg:leading-16 pt-28"
           >
             Whether you are looking for a second passport, European residency,
             or tax-efficient global solutions,
@@ -599,7 +1024,7 @@
         </div>
       </section>
       <!-- approch start -->
-      <section class="px-4 lg:px-14 relative approach">
+      <section class="px-4 lg:px-14 relative approach lg:block hidden">
         <div class="swiper approach-swiper">
           <div class="swiper-wrapper">
             <!-- slider 1 -->
@@ -642,7 +1067,8 @@
                   <div class="4/6">
                     <h2 class="text-[32px] lg:text-6xl font-light text-black">
                       We form a
-                      <span class="font-quarto text-[40px] lg:text-[70px]"
+                      <span
+                        class="font-quarto italic lowercase text-[40px] lg:text-[70px]"
                         >relationship</span
                       >
                       with every individual we work with.
@@ -678,20 +1104,23 @@
                   </h3>
                 </div>
                 <div class="absolute left-0 top-65 w-[90%]">
-                  <div class="flex lg:flex-row justify-between relative">
-                    <div
-                      class="hidden lg:block w-[100%] h-[1px] bg-black absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2"
-                    ></div>
+                  <div class="flex lg:flex-row justify-between space-x-5">
                     <button
-                      class="border-[1px] border-beige rounded-full py-8 px-12 text-black font-normal italic bg-beige z-10"
+                      class="border-[1px] border-beige rounded-full text-black font-normal italic bg-beige z-10"
                     >
                       Care
                     </button>
+                    <div
+                      class="hidden lg:block w-full h-[1px] bg-black my-auto"
+                    ></div>
                     <button
                       class="border-[1px] border-black rounded-full py-8 px-12 text-black font-normal italic bg-beige z-10"
                     >
                       Relationship
                     </button>
+                    <div
+                      class="hidden lg:block w-full h-[1px] bg-beige my-auto"
+                    ></div>
                     <button
                       class="border-[1px] border-beige rounded-full py-8 px-12 text-beige font-normal italic bg-beige z-10"
                     ></button>
@@ -710,7 +1139,8 @@
                   <div class="4/6">
                     <h2 class="text-[32px] lg:text-6xl font-light text-black">
                       We form a
-                      <span class="font-quarto text-[40px] lg:text-[70px]"
+                      <span
+                        class="font-quarto italic lowercase text-[40px] lg:text-[70px]"
                         >relationship</span
                       >
                       with every individual we work with.
@@ -746,20 +1176,23 @@
                   </h3>
                 </div>
                 <div class="absolute left-0 top-65 w-[90%]">
-                  <div class="flex lg:flex-row justify-between relative">
-                    <div
-                      class="hidden lg:block w-[90%] h-[1px] bg-black absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                    ></div>
+                  <div class="flex lg:flex-row justify-between space-x-5">
                     <button
-                      class="border-[1px] border-beige rounded-full py-8 px-12 text-black font-normal italic bg-beige z-10"
+                      class="border-[1px] border-beige rounded-full text-black font-normal italic bg-beige z-10"
                     >
                       Care
                     </button>
+                    <div
+                      class="hidden lg:block w-full h-[1px] bg-black my-auto"
+                    ></div>
                     <button
-                      class="border-[1px] border-beige rounded-full py-8 px-12 text-black font-normal italic bg-beige z-10"
+                      class="border-[1px] border-beige rounded-full text-black font-normal italic bg-beige z-10"
                     >
                       Relationship
                     </button>
+                    <div
+                      class="hidden lg:block w-full h-[1px] bg-black my-auto"
+                    ></div>
                     <button
                       class="border-[1px] border-black rounded-full py-8 px-12 text-black font-normal italic bg-beige z-10"
                     >
@@ -780,7 +1213,8 @@
                   <div class="4/6">
                     <h2 class="text-[32px] lg:text-6xl font-light text-black">
                       We form a
-                      <span class="font-quarto text-[40px] lg:text-[70px]"
+                      <span
+                        class="font-quarto italic lowercase text-[40px] lg:text-[70px]"
                         >relationship</span
                       >
                       with every individual we work with.
@@ -812,6 +1246,189 @@
           </div>
         </div>
       </section>
+      <!-- approch two -->
+      <section class="px-4 py-10 block lg:hidden">
+        <div class="swiper twoApprochSwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="space-y-4">
+                <div class="space-y-4">
+                  <div>
+                    <a
+                      href="#"
+                      class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block"
+                    >
+                      Request a call today
+                    </a>
+                  </div>
+                  <h3
+                    class="max-w-[707px] text-[32px] lg:text-6xl font-light text-black leading-tight"
+                  >
+                    With Us, it’s always personal
+                  </h3>
+                </div>
+                <div class="w-full">
+                  <div class="flex lg:flex-row justify-between space-x-2">
+                    <button
+                      class="border-[1px] border-black rounded-full py-4 px-5 text-black font-normal italic bg-beige z-10"
+                    >
+                      Care
+                    </button>
+                  </div>
+                </div>
+                <h2
+                  class="text-[32px] lg:text-6xl font-light text-black leading-tight"
+                >
+                  We pride ourselves on taking
+                  <span class="font-quarto text-[40px] italic lowercase"
+                    >great care</span
+                  >
+                  about everyone’s journey,
+                </h2>
+                <div
+                  class="flex flex-row items-center justify-between space-x-4"
+                >
+                  <div class="w-1/2">
+                    <img src="./img/approch-02.png" alt="approach" class="" />
+                  </div>
+                  <div class="w-1/2">
+                    <p class="text-lg font-gilroy font-normal text-black pt-7">
+                      afterall, it’s personal to you and where necessary, your
+                      family. We care and look out for you like no other.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="space-y-4">
+                <div class="space-y-4">
+                  <div>
+                    <a
+                      href="#"
+                      class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block"
+                    >
+                      Request a call today
+                    </a>
+                  </div>
+                  <h3
+                    class="max-w-[707px] text-[32px] lg:text-6xl font-light text-black leading-tight"
+                  >
+                    With Us, it’s always personal
+                  </h3>
+                </div>
+                <div class="w-full">
+                  <div class="flex lg:flex-row justify-between space-x-2">
+                    <button
+                      class="border-[1px] border-beige rounded-full text-black font-normal italic bg-beige z-10"
+                    >
+                      Care
+                    </button>
+                    <div class="w-full h-[1px] bg-black my-auto"></div>
+                    <button
+                      class="border-[1px] border-black rounded-full py-4 px-5 text-black font-normal italic bg-beige z-10"
+                    >
+                      Relationship
+                    </button>
+                    <div class="w-full h-[1px] bg-beige my-auto"></div>
+                    <button
+                      class="border-[1px] border-beige rounded-full text-beige font-normal italic bg-beige z-10"
+                    >
+                      Commitment
+                    </button>
+                  </div>
+                </div>
+                <h2
+                  class="text-[32px] lg:text-6xl font-light text-black leading-tight"
+                >
+                  We form a
+                  <span class="font-quarto text-[40px] italic lowercase"
+                    >relationship</span
+                  >
+                  with every individual we work with.
+                </h2>
+                <div
+                  class="flex flex-row items-center justify-between space-x-4"
+                >
+                  <div class="w-1/2">
+                    <img src="./img/approch-01.png" alt="approach" class="" />
+                  </div>
+                  <div class="w-1/2">
+                    <p class="text-lg font-gilroy font-normal text-black pt-7">
+                      afterall, it’s personal to you and where necessary, your
+                      family. We care and look out for you like no other.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="space-y-4">
+                <div class="space-y-4">
+                  <div>
+                    <a
+                      href="#"
+                      class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block"
+                    >
+                      Request a call today
+                    </a>
+                  </div>
+                  <h3
+                    class="max-w-[707px] text-[32px] lg:text-6xl font-light text-black leading-tight"
+                  >
+                    With Us, it’s always personal
+                  </h3>
+                </div>
+                <div class="w-full">
+                  <div class="flex lg:flex-row justify-between space-x-2">
+                    <button
+                      class="border-[1px] border-beige rounded-full text-black font-normal italic bg-beige z-10"
+                    >
+                      Care
+                    </button>
+                    <div class="w-full h-[1px] bg-black my-auto"></div>
+                    <button
+                      class="border-[1px] border-beige rounded-full text-black font-normal italic bg-beige z-10"
+                    >
+                      Relationship
+                    </button>
+                    <div class="w-full h-[1px] bg-black my-auto"></div>
+                    <button
+                      class="border-[1px] border-black rounded-full py-4 px-5 text-black font-normal italic bg-beige z-10"
+                    >
+                      Commitment
+                    </button>
+                  </div>
+                </div>
+                <h2
+                  class="text-[32px] lg:text-6xl font-light text-black leading-tight"
+                >
+                  We are
+                  <span class="font-quarto text-[40px] italic lowercase"
+                    >committed</span
+                  >
+                  to each individual and act in your best interest. 
+                </h2>
+                <div
+                  class="flex flex-row items-center justify-between space-x-4"
+                >
+                  <div class="w-1/2">
+                    <img src="./img/approch-03.png" alt="approach" class="" />
+                  </div>
+                  <div class="w-1/2">
+                    <p class="text-lg font-gilroy font-normal text-black pt-7">
+                      We make sure work gets complete on time with no delays. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- faq start -->
       <section id="faq" class="px-4 py-10 lg:px-14">
         <div class="pb-20">
@@ -822,69 +1439,131 @@
             Frequently Asked Questions
           </a>
         </div>
-        <div class="max-w-[1263px] mx-auto px-4">
+        <div class="max-w-[1263px] mx-auto">
           <!-- Accordion 1 -->
           <div
-            class="collapse bg-transparent px-6 py-4 transition-all duration-300 rounded-xl"
+            class="collapse transition-all duration-300 faq-default"
             id="accordion1"
           >
             <input
               type="radio"
               name="my-accordion-group"
               id="accordion1-input"
-              onchange="toggleAccordionBg()"
               class="peer hidden"
             />
             <div
-              class="collapse-title text-3xl font-medium text-black flex items-center justify-between"
+              class="collapse-title text-[22px] lg:text-3xl font-medium text-black flex items-center justify-between"
             >
               <label
                 for="accordion1-input"
                 class="flex items-center justify-between w-full cursor-pointer"
               >
                 <span>How do I create an account?</span>
-                <!-- Custom circle arrow -->
+                <!-- Icon container -->
                 <div
-                  class="w-16 h-16 p-3 transform transition-transform duration-300 peer-checked:rotate-180 rounded-full border-2 border-mid-grey flex items-center justify-center"
+                  class="min-w-14 min-h-14 lg:w-16 lg:h-16 p-3 rounded-full border-2 border-gray-400 flex items-center justify-center"
                 >
-                  <i class="ri-arrow-down-long-line"></i>
+                  <i class="ri-arrow-down-long-line text-xl icon"></i>
                 </div>
               </label>
             </div>
-            <div class="collapse-content text-sm text-gray-700">
+            <div class="collapse-content text-sm text-gray-700 p-4">
               Click the "Sign Up" button in the top right corner and follow the
               registration process.
             </div>
           </div>
           <!-- Accordion 2 -->
           <div
-            class="collapse bg-transparent px-6 py-4 transition-all duration-300 rounded-xl"
+            class="collapse transition-all duration-300 faq-default"
             id="accordion2"
           >
             <input
               type="radio"
               name="my-accordion-group"
               id="accordion2-input"
-              onchange="toggleAccordionBg()"
               class="peer hidden"
             />
             <div
-              class="collapse-title text-3xl font-medium text-black flex items-center justify-between"
+              class="collapse-title text-[22px] lg:text-3xl font-medium text-black flex items-center justify-between"
             >
               <label
                 for="accordion2-input"
                 class="flex items-center justify-between w-full cursor-pointer"
               >
                 <span>How do I create an account?</span>
-                <!-- Custom circle arrow -->
+                <!-- Icon container -->
                 <div
-                  class="w-16 h-16 p-3 transform transition-transform duration-300 peer-checked:rotate-180 rounded-full border-2 border-mid-grey flex items-center justify-center"
+                  class="min-w-14 min-h-14 lg:w-16 lg:h-16 p-3 rounded-full border-2 border-gray-400 flex items-center justify-center"
                 >
-                  <i class="ri-arrow-down-long-line"></i>
+                  <i class="ri-arrow-down-long-line text-xl icon"></i>
                 </div>
               </label>
             </div>
-            <div class="collapse-content text-sm text-gray-700">
+            <div class="collapse-content text-sm text-gray-700 p-4">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <!-- Accordion 3 -->
+          <div
+            class="collapse transition-all duration-300 faq-default"
+            id="accordion3"
+          >
+            <input
+              type="radio"
+              name="my-accordion-group"
+              id="accordion3-input"
+              class="peer hidden"
+            />
+            <div
+              class="collapse-title text-[22px] lg:text-3xl font-medium text-black flex items-center justify-between"
+            >
+              <label
+                for="accordion3-input"
+                class="flex items-center justify-between w-full cursor-pointer"
+              >
+                <span>How do I create an account?</span>
+                <!-- Icon container -->
+                <div
+                  class="min-w-14 min-h-14 lg:w-16 lg:h-16 p-3 rounded-full border-2 border-gray-400 flex items-center justify-center"
+                >
+                  <i class="ri-arrow-down-long-line text-xl icon"></i>
+                </div>
+              </label>
+            </div>
+            <div class="collapse-content text-sm text-gray-700 p-4">
+              Click the "Sign Up" button in the top right corner and follow the
+              registration process.
+            </div>
+          </div>
+          <!-- Accordion 4 -->
+          <div
+            class="collapse transition-all duration-300 faq-default"
+            id="accordion4"
+          >
+            <input
+              type="radio"
+              name="my-accordion-group"
+              id="accordion4-input"
+              class="peer hidden"
+            />
+            <div
+              class="collapse-title text-[22px] lg:text-3xl font-medium text-black flex items-center justify-between"
+            >
+              <label
+                for="accordion4-input"
+                class="flex items-center justify-between w-full cursor-pointer"
+              >
+                <span>How do I create an account?</span>
+                <!-- Icon container -->
+                <div
+                  class="min-w-14 min-h-14 lg:w-16 lg:h-16 p-3 rounded-full border-2 border-gray-400 flex items-center justify-center"
+                >
+                  <i class="ri-arrow-down-long-line text-xl icon"></i>
+                </div>
+              </label>
+            </div>
+            <div class="collapse-content text-sm text-gray-700 p-4">
               Click the "Sign Up" button in the top right corner and follow the
               registration process.
             </div>
@@ -892,12 +1571,14 @@
         </div>
       </section>
       <!-- request start -->
-    <section class="px-4 py-20 lg:px-14">
-        <div class="max-w-[1320px] flex justify-between space-x-40">
-          <div>
+      <section class="px-4 py-20 lg:px-14">
+        <div
+          class="max-w-[1320px] flex flex-col lg:flex-row justify-between space-x-40"
+        >
+          <div class="w-full">
             <a
               href="#"
-              class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block"
+              class="text-2xl text-black font-medium border-b-[1px] border-black pb-4 inline-block mb-10 lg:mb-0"
             >
               Request a call today
             </a>
@@ -909,28 +1590,28 @@
                 <input
                   type="text"
                   placeholder="First Name"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Last Name"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <div>
                 <input
                   type="email"
                   placeholder="Email"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Phone"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
             </div>
@@ -941,12 +1622,12 @@
                 <input
                   type="text"
                   placeholder="Write your messages in here"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <button
                 type="submit"
-                class="w-12 h-12 border border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition text-2xl cursor-pointer"
+                class="w-12 h-12 border border-black rounded-full flex items-center justify-center hover:bg-yellow hover:border-yellow hover:text-white transition text-2xl cursor-pointer"
               >
                 <i class="ri-arrow-right-up-line"></i>
               </button>
@@ -969,52 +1650,72 @@
           </a>
           <!-- menus -->
           <div>
-            <ul class="flex flex-col lg:flex-row gap-8 text-white text-sm">
+            <ul
+              class="flex flex-col lg:flex-row gap-8 font-grotesk font-normal text-white text-sm"
+            >
               <li class="flex flex-col space-y-4">
-                <a href="mailto:info@bridgepartnersuk.com"
+                <a
+                  href="mailto:info@bridgepartnersuk.com"
+                  class="hover:text-yellow"
                   >info@bridgepartnersuk.com</a
                 >
-                <a href="tel:+4402033973897">+44 (0) 203 397 3897</a>
+                <a href="tel:+4402033973897" class="hover:text-yellow"
+                  >+44 (0) 203 397 3897</a
+                >
               </li>
               <li>
-                <a href="#">67 Grosvenor Street,London W1K 3JNUnited Kingdom</a>
+                <a href="#" class="hover:text-yellow"
+                  >67 Grosvenor Street,London W1K 3JNUnited Kingdom</a
+                >
               </li>
               <li>
-                <a href="#"
+                <a href="#" class="hover:text-yellow"
                   >67 Grosvenor Street,Dubai W1K 3JNUnited Arab Emirates</a
                 >
               </li>
             </ul>
             <ul
-              class="flex flex-row flex-wrap justify-between space-x-7 mt-8 lg:mt-30"
+              class="flex flex-row flex-wrap justify-between font-grotesk font-medium space-x-7 mt-8 lg:mt-30"
             >
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./index.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Home</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./about.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >About Us</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="#"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Residency</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./country.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Citezenship</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./blog.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Articles/Blog</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./contact.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Contact Us</a
                 >
               </li>
@@ -1023,7 +1724,11 @@
           <!-- social -->
           <div class="flex flex-col gap-8">
             <ul class="flex items-center space-x-3">
-              <li><p class="block text-white">Follow&nbspUs:</p></li>
+              <li>
+                <p class="block text-white font-grotesk font-normal">
+                  Follow&nbspUs:
+                </p>
+              </li>
               <li>
                 <a
                   href="#"
@@ -1040,10 +1745,10 @@
               </li>
             </ul>
             <div>
-              <h3 class="text-white lg:text-lg font-gilroy pb-2">
+              <h3 class="text-white lg:text-lg font-grotesk font-normal pb-2">
                 Subscribe for Updates
               </h3>
-              <p class="text-mid-grey font-gilroy">
+              <p class="text-mid-grey font-grotesk font-medium">
                 Subscribe to our newsletter to stay up to date with our latest
                 news
               </p>
@@ -1054,8 +1759,7 @@
               <input
                 type="email"
                 placeholder="Your Email Address here"
-                class="input input-bordered w-full bg-transparent text-grey border-grey outline outline-grey rounded-full pl-4 pr-12 h-12 focus:outline-none focus:ring-2 focus:ring-turquoise font-gilroy"
-                style="font-family: Gilroy, Bangla327, sans-serif"
+                class="input input-bordered w-full bg-transparent text-grey border-grey outline outline-grey rounded-full pl-4 pr-12 h-12 focus:outline-none focus:ring-2 focus:ring-turquoise font-grotesk"
               />
               <!-- Submit Button -->
               <button
@@ -1084,41 +1788,28 @@
         <div class="flex flex-col lg:flex-row justify-between gap-4">
           <ul class="flex flex-row gap-16">
             <li>
-              <a href="#" class="text-xs text-white font-gilroy">Disclaimer</a>
+              <a
+                href="#"
+                class="text-xs text-white font-grotesk font-normal hover:text-yellow"
+                >Disclaimer</a
+              >
             </li>
             <li>
-              <a href="#" class="text-xs text-white font-gilroy"
+              <a
+                href="#"
+                class="text-xs text-white font-grotesk font-normal hover:text-yellow"
                 >Privacy Policy</a
               >
             </li>
           </ul>
-          <p class="text-xs text-white font-gilroy">
+          <p class="text-xs text-white font-grotesk font-normal">
             © Copyright 2025 Bridge Partners, Inc. All Rights Reserved.
           </p>
         </div>
       </div>
     </footer>
     <!-- script -->
-    <script>
-      function toggleAccordionBg() {
-        const inputs = document.querySelectorAll(
-          'input[name="my-accordion-group"]'
-        );
-        inputs.forEach((input) => {
-          const accordion = input.closest(".collapse");
-          if (input.checked) {
-            accordion.classList.remove("bg-transparent");
-            accordion.classList.add("bg-white");
-            accordion.classList.add("shadow-lg");
-          } else {
-            accordion.classList.remove("shadow-lg");
-            accordion.classList.remove("bg-white");
-            accordion.classList.add("bg-transparent");
-          }
-        });
-      }
-      toggleAccordionBg();
-    </script>
+
     <script>
       const swiper = new Swiper(".newSwiper", {
         slidesPerView: 1,
@@ -1163,6 +1854,15 @@
           });
       });
     </script>
+    <script>
+      const miniApproachSwiper = new Swiper(".miniApproach-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        navigation: false,
+      });
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

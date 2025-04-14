@@ -25,7 +25,8 @@
 
   <body class="font-inter">
     <!-- header start -->
-      <header class="relative" id="header">
+    <!-- header start -->
+    <header class="relative z-10" id="header">
       <div class="w-full lg:max-w-[1470px] mx-auto px-8">
         <div class="flex justify-between items-center py-6.5">
           <a href="./index.html">
@@ -33,45 +34,191 @@
           </a>
           <div class="flex justify-center items-center gap-12">
             <a
-              href="#"
+              href="./contact.html"
               class="contact-us py-3 px-9 rounded-full bg-transparent text-black hover:bg-black hover:text-white border-2 border-black font-medium transition duration-300 ease-in-out hidden lg:inline-block"
             >
               Contact Us
             </a>
             <span
-              class="divider w-10 h-[1px] bg-black hidden lg:inline-block my-auto"
+              class="w-10 h-[1px] bg-black hidden lg:inline-block my-auto"
             ></span>
 
             <!-- Hamburger Button -->
-            <button class="hamburger text-2xl lg:text-3xl cursor-pointer">
-              <i class="ri-menu-2-line"></i>
-            </button>
+            <label
+              for="my-drawer"
+              class="hamburger text-2xl lg:text-3xl cursor-pointer inline-block"
+            >
+              <i class="ri-menu-2-line text-black"></i>
+            </label>
           </div>
         </div>
       </div>
     </header>
-
     <!-- Overlay Menu -->
-    <nav
-      class="overlay-menu fixed inset-0 bg-black bg-opacity-70 flex flex-col items-center justify-center z-50 hidden"
-    >
-      <div class="w-full lg:max-w-[1470px] mx-auto px-8">
-        <button class="close-menu text-white text-3xl">
-          <i class="ri-close-line"></i>
-        </button>
+    <div class="drawer drawer-end z-50">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+      <div class="drawer-side">
+        <label for="my-drawer" class="drawer-overlay"></label>
+
+        <div
+          class="menu p-8 lg:p-20 w-[90vw] lg:max-w-[561px] min-h-full bg-dark-grey text-black flex flex-col justify-between relative"
+        >
+          <!-- Close Button -->
+          <label
+            for="my-drawer"
+            class="border-none cursor-pointer bg-dark-white absolute right-20 top-10 text-white text-2xl"
+          >
+            <i class="ri-close-large-line"></i>
+          </label>
+
+          <!-- Centered Menu -->
+          <div class="flex-grow flex items-center justify-center">
+            <!-- <ul class="space-y-8 text-center">
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Residency</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Citizenship</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Articles/Blog</a
+                >
+              </li>
+              <li>
+                <a class="text-lg cursor-pointer font-light lg:text-5xl"
+                  >Contact Us</a
+                >
+              </li>
+            </ul> -->
+            <ul class="space-y-4 lg:space-y-8 text-left -ml-10">
+              <li>
+                <a
+                  href="./index.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Home
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    About Us
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Residency
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./blog.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Citizenship
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./blog.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-100 opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300 is-active"
+                  ></span>
+                  <span class="transition-all duration-300 translate-x-7">
+                    Articles/Blog
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="./blog.html"
+                  class="group flex items-center text-3xl lg:text-5xl font-light text-white hover:text-white/60 transition-all duration-300"
+                >
+                  <!-- Capsule line -->
+                  <span
+                    class="inline-block w-6 h-2 lg:w-13 lg:h-3 border-[1px] border-white rounded-full -mr-1 lg:-mr-3 transform scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100 group-active:scale-x-100 group-active:opacity-100 transition-all duration-300"
+                  ></span>
+                  <span
+                    class="transition-all duration-300 group-hover:translate-x-7"
+                  >
+                    Contact Us
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Footer at bottom left -->
+          <div class="pt-10">
+            <ul class="space-y-2 text-left">
+              <li>
+                <a
+                  class="text-lg text-white cursor-pointer font-gilroy font-light underline underline-offset-5 inline-block hover:text-yellow"
+                  >Disclaimer</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-lg text-white cursor-pointer font-gilroy font-light underline underline-offset-5 inline-block hover:text-yellow"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <ul
-        class="menu-list flex flex-col items-center gap-8 text-white text-xl lg:text-3xl"
-      >
-        <li><a href="#" class="hover:text-gray-300 transition">Home</a></li>
-        <li><a href="#" class="hover:text-gray-300 transition">Country</a></li>
-        <li><a href="#" class="hover:text-gray-300 transition">About</a></li>
-        <li>
-          <a href="#" class="hover:text-gray-300 transition">Blog</a>
-        </li>
-        <li><a href="#" class="hover:text-gray-300 transition">Contact</a></li>
-      </ul>
-    </nav>
+    </div>
     <!-- header end -->
     <!-- main start -->
     <main class="w-full">
@@ -117,7 +264,7 @@
                 </p>
                 <div class="flex items-center pt-1 lg:pt-0">
                   <a
-                    href="#"
+                    href="./blog-article.html"
                     class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
                     >Read more</a
                   >
@@ -167,7 +314,7 @@
                 </p>
                 <div class="flex items-center pt-1 lg:pt-0">
                   <a
-                    href="#"
+                    href="./blog-article.html"
                     class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
                     >Read more</a
                   >
@@ -218,7 +365,7 @@
                 </p>
                 <div class="flex items-center pt-1 lg:pt-0">
                   <a
-                    href="#"
+                    href="./blog-article.html"
                     class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
                     >Read more</a
                   >
@@ -269,7 +416,7 @@
                 </p>
                 <div class="flex items-center pt-1 lg:pt-0">
                   <a
-                    href="#"
+                    href="./blog-article.html"
                     class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
                     >Read more</a
                   >
@@ -319,7 +466,7 @@
                 </p>
                 <div class="flex items-center pt-1 lg:pt-0">
                   <a
-                    href="#"
+                    href="./blog-article.html"
                     class="border-2 border-black py-3 px-9 text-black text-sm font-medium rounded-full hover:bg-black hover:text-white transition-all duration-300 ease-in-out inline-block"
                     >Read more</a
                   >
@@ -360,35 +507,35 @@
               Request a call today
             </a>
           </div>
-           <form class="lg:min-w-[820px] space-y-6">
+          <form class="lg:min-w-[820px] space-y-6">
             <!-- Grid for 2 columns on md+ -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <input
                   type="text"
                   placeholder="First Name"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Last Name"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <div>
                 <input
                   type="email"
                   placeholder="Email"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <div>
                 <input
                   type="text"
                   placeholder="Phone"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
             </div>
@@ -399,12 +546,12 @@
                 <input
                   type="text"
                   placeholder="Write your messages in here"
-                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-turquoise focus:outline-none py-2 placeholder:text-black placeholder:font-gilroy placeholder:font-normal text-lg"
+                  class="w-full bg-transparent border-0 border-b-[3px] border-black focus:border-yellow focus:outline-none py-2 placeholder:text-black placeholder:font-grotesk placeholder:font-normal text-lg"
                 />
               </div>
               <button
                 type="submit"
-                class="w-12 h-12 border border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition text-2xl cursor-pointer"
+                class="w-12 h-12 border border-black rounded-full flex items-center justify-center hover:bg-yellow hover:border-yellow hover:text-white transition text-2xl cursor-pointer"
               >
                 <i class="ri-arrow-right-up-line"></i>
               </button>
@@ -428,52 +575,72 @@
           </a>
           <!-- menus -->
           <div>
-            <ul class="flex flex-col lg:flex-row gap-8 text-white text-sm">
+            <ul
+              class="flex flex-col lg:flex-row gap-8 font-grotesk font-normal text-white text-sm"
+            >
               <li class="flex flex-col space-y-4">
-                <a href="mailto:info@bridgepartnersuk.com"
+                <a
+                  href="mailto:info@bridgepartnersuk.com"
+                  class="hover:text-yellow"
                   >info@bridgepartnersuk.com</a
                 >
-                <a href="tel:+4402033973897">+44 (0) 203 397 3897</a>
+                <a href="tel:+4402033973897" class="hover:text-yellow"
+                  >+44 (0) 203 397 3897</a
+                >
               </li>
               <li>
-                <a href="#">67 Grosvenor Street,London W1K 3JNUnited Kingdom</a>
+                <a href="#" class="hover:text-yellow"
+                  >67 Grosvenor Street,London W1K 3JNUnited Kingdom</a
+                >
               </li>
               <li>
-                <a href="#"
+                <a href="#" class="hover:text-yellow"
                   >67 Grosvenor Street,Dubai W1K 3JNUnited Arab Emirates</a
                 >
               </li>
             </ul>
             <ul
-              class="flex flex-row flex-wrap justify-between space-x-7 mt-8 lg:mt-30"
+              class="flex flex-row flex-wrap justify-between font-grotesk font-medium space-x-7 mt-8 lg:mt-30"
             >
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./index.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Home</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./about.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >About Us</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="#"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Residency</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./country.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Citezenship</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./blog.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Articles/Blog</a
                 >
               </li>
               <li>
-                <a href="#" class="text-sm text-white font-gilroy font-normal"
+                <a
+                  href="./contact.html"
+                  class="text-sm text-white font-gilroy font-normal hover:text-yellow"
                   >Contact Us</a
                 >
               </li>
@@ -482,7 +649,11 @@
           <!-- social -->
           <div class="flex flex-col gap-8">
             <ul class="flex items-center space-x-3">
-              <li><p class="block text-white">Follow&nbspUs:</p></li>
+              <li>
+                <p class="block text-white font-grotesk font-normal">
+                  Follow&nbspUs:
+                </p>
+              </li>
               <li>
                 <a
                   href="#"
@@ -499,10 +670,10 @@
               </li>
             </ul>
             <div>
-              <h3 class="text-white lg:text-lg font-gilroy pb-2">
+              <h3 class="text-white lg:text-lg font-grotesk font-normal pb-2">
                 Subscribe for Updates
               </h3>
-              <p class="text-mid-grey font-gilroy">
+              <p class="text-mid-grey font-grotesk font-medium">
                 Subscribe to our newsletter to stay up to date with our latest
                 news
               </p>
@@ -513,8 +684,7 @@
               <input
                 type="email"
                 placeholder="Your Email Address here"
-                class="input input-bordered w-full bg-transparent text-grey border-grey outline outline-grey rounded-full pl-4 pr-12 h-12 focus:outline-none focus:ring-2 focus:ring-turquoise font-gilroy"
-                style="font-family: Gilroy, Bangla327, sans-serif"
+                class="input input-bordered w-full bg-transparent text-grey border-grey outline outline-grey rounded-full pl-4 pr-12 h-12 focus:outline-none focus:ring-2 focus:ring-turquoise font-grotesk"
               />
               <!-- Submit Button -->
               <button
@@ -543,15 +713,21 @@
         <div class="flex flex-col lg:flex-row justify-between gap-4">
           <ul class="flex flex-row gap-16">
             <li>
-              <a href="#" class="text-xs text-white font-gilroy">Disclaimer</a>
+              <a
+                href="#"
+                class="text-xs text-white font-grotesk font-normal hover:text-yellow"
+                >Disclaimer</a
+              >
             </li>
             <li>
-              <a href="#" class="text-xs text-white font-gilroy"
+              <a
+                href="#"
+                class="text-xs text-white font-grotesk font-normal hover:text-yellow"
                 >Privacy Policy</a
               >
             </li>
           </ul>
-          <p class="text-xs text-white font-gilroy">
+          <p class="text-xs text-white font-grotesk font-normal">
             © Copyright 2025 Bridge Partners, Inc. All Rights Reserved.
           </p>
         </div>
